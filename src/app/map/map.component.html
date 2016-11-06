@@ -1,0 +1,16 @@
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<app-navbar [userName]= 'userName' [userImage]='userImage' > </app-navbar>
+
+<div class="row" *ngIf="auth.authenticated()">
+  <div class="col-lg-12">
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <sebm-google-map-marker [latitude]="lat" [longitude]="lng">
+        <sebm-google-map-info-window [disableAutoPan]="true">
+         Here is the latitude  {{lat}}  and longitude {{lng}}
+       </sebm-google-map-info-window>
+      </sebm-google-map-marker>
+    </sebm-google-map>
+  </div>
+</div>
+
