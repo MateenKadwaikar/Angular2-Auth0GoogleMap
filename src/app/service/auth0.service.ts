@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
-import { myConfig } from '../auth.config';
+import { myConfig } from '../config/auth.config';
 import { Router } from '@angular/router';
 
 // Avoid name not found warnings
