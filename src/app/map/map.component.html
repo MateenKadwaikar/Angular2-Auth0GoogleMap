@@ -4,10 +4,10 @@
 
 <div class="row" *ngIf="auth.authenticated()">
   <div class="col-lg-12">
-    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-      <sebm-google-map-marker [latitude]="lat" [longitude]="lng">
-        <sebm-google-map-info-window [disableAutoPan]="true">
-         Here is the latitude  {{lat}}  and longitude {{lng}}
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (zoomChange)="zoomChange($event)"  (mapClick)="mapClicked($event)">
+      <sebm-google-map-marker [latitude]="lat" [longitude]="lng" (markerClick) = "clickedMarker(lat,lng)">
+        <sebm-google-map-info-window [disableAutoPan]="true" >
+         <strong>{{address}}</strong>
        </sebm-google-map-info-window>
       </sebm-google-map-marker>
     </sebm-google-map>
